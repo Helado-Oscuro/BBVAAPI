@@ -6,19 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850e58ca-3586-45a1-b351-499f83d8c03a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BBVA.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BBVA.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/AttentionChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AttentionChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/BankContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/BankContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Office.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Office.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Ticket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/TicketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TicketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

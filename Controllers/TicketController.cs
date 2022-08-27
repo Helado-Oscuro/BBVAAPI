@@ -6,41 +6,45 @@ using Microsoft.AspNetCore.Mvc;
 namespace BBVA.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TicketController : Controller
     {
-        private readonly TicketRepository _ticketRepository;
-        public TicketController(TicketRepository ticketRepository)
+        private BankContext _context;
+
+        public TicketController(BankContext context)
         {
-            _ticketRepository = ticketRepository;
+            _context = context;
         }
 
-        // GET: api/values
-        public IEnumerable<string> Get()
+        [HttpGet]
+        public IList<User> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return _context.User.ToList();
         }
 
-        // GET: api/values/5
-        public string Get(int id)
+        [HttpPost]
+        public IActionResult Create([FromBody] User user)
         {
-            return "value";
+            _context.User.Add(user);
+            _context.SaveChanges();
+            return Ok();
         }
 
-        // POST: api/values
-        public void Post([FromBody] Ticket ticket)
+        [HttpPut] // by id
+        public IActionResult Update([FromBody] User user)
         {
-            _ticketRepository.Add(ticket);
+            _context.User.Update(user);
+            _context.SaveChanges();
+            return Ok();
         }
 
-        // PUT: api/values/5
-        public void Put(int id, [FromBody] string value)
+        [HttpDelete] // by id
+        public IActionResult Delete(int id)
         {
-        }
-
-        // DELETE: api/values/5
-        public void Delete(int id)
-        {
+            var user = _context.User.FirstOrDefault(x => x.Id == id);
+            _context.User.Remove(user);
+            _context.SaveChanges();
+            return Ok();
         }
     }
 }
