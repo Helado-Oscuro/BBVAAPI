@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BBVA.src.user.domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace BBVA.Models
 {

@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BBVA.Models
+﻿namespace BBVA.src.user.domain
 {
     public class User
     {

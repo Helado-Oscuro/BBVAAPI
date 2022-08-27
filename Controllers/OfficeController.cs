@@ -1,40 +1,37 @@
 ﻿using BBVA.Models;
-using BBVA.Repository;
-using BBVA.src.user.domain;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BBVA.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : Controller
+    public class OfficeController : ControllerBase
     {
         private BankContext _context;
 
-        public UserController(BankContext context)
+        public OfficeController(BankContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IList<User> GetAll()
+        public IList<Office> GetAll()
         {
-            return _context.User.ToList();
+            return _context.Office.ToList();
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] User user)
+        public IActionResult Create([FromBody] Office office)
         {
-            _context.User.Add(user);
+            _context.Office.Add(office);
             _context.SaveChanges();
             return Ok();
         }
 
         [HttpPut] // by id
-        public IActionResult Update([FromBody] User user)
+        public IActionResult Update([FromBody] Office office)
         {
-            _context.User.Update(user);
+            _context.Office.Update(office);
             _context.SaveChanges();
             return Ok();
         }
@@ -42,8 +39,8 @@ namespace BBVA.Controllers
         [HttpDelete] // by id
         public IActionResult Delete(int id)
         {
-            var user = _context.User.FirstOrDefault(x => x.Id == id);
-            _context.User.Remove(user);
+            var office = _context.Office.FirstOrDefault(x => x.Id == id);
+            _context.Office.Remove(office);
             _context.SaveChanges();
             return Ok();
         }
