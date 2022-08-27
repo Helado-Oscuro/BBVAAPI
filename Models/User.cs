@@ -5,8 +5,6 @@ namespace BBVA.Models
 {
     public class User
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public int Id { get; set; }
         public int DNI { get; set; }
         public string Name { get; set; }

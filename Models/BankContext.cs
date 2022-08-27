@@ -11,6 +11,5 @@ namespace BBVA.Models
         public DbSet<User> User { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<Office> Office { get; set; }
-        public DbSet<AttentionChannel> AttentionChannel { get; set; }
     }
 }

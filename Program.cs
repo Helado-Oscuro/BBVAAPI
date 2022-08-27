@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BankContext>(
-    o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    o => o.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
 
 var app = builder.Build();
