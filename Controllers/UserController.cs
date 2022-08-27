@@ -7,11 +7,11 @@ namespace BBVA.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TicketController : Controller
+    public class UserController : Controller
     {
         private BankContext _context;
 
-        public TicketController(BankContext context)
+        public UserController(BankContext context)
         {
             _context = context;
         }
