@@ -2,13 +2,15 @@
 
 namespace BBVA.Models
 {
-    public class BankContext:DbContext
+    public class BankContext : DbContext
     {
         public BankContext(DbContextOptions<BankContext> options) : base(options)
         {
         }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<Office> Offices { get; set; }
+
+        public DbSet<User> User { get; set; }
+        public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<Office> Office { get; set; }
+        public DbSet<AttentionChannel> AttentionChannel { get; set; }
     }
 }
