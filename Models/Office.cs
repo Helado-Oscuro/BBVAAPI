@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BBVA.Models
 {
-    public class Office
+    public class Office:BaseEntity
     {
         public int Id { get; set; }
 

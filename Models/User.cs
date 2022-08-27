@@ -1,6 +1,8 @@
-﻿namespace BBVA.src.user.domain
+﻿using BBVA.Models;
+
+namespace BBVA.src.user.domain
 {
-    public class User
+    public class User : BaseEntity
     {
         public int Id { get; set; }
         public string DNI { get; set; }

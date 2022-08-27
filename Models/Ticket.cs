@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BBVA.Models
 {
-    public class Ticket
+    public class Ticket : BaseEntity
     {
         public int Id { get; set; }
 
