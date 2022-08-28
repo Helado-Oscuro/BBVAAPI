@@ -6,8 +6,17 @@ namespace BBVA
 {
     public class BankContext : DbContext
     {
-        public BankContext(DbContextOptions<BankContext> options) : base(options)
+        protected readonly IConfiguration Configuration;
+
+        public BankContext(IConfiguration configuration)
         {
+            Configuration = configuration;
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            // connect to postgres with connection string from app settings
+            options.UseNpgsql(Configuration.GetConnectionString("DatabaseConnection"));
         }
 
         public DbSet<User> User { get; set; }

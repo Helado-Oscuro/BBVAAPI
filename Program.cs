@@ -12,8 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // https://api.reniec.online
 builder.Services.AddHttpClient();
-builder.Services.AddDbContext<BankContext>(
-    o => o.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection")));
+builder.Services.AddDbContext<BankContext>();
 
 
 var app = builder.Build();
@@ -26,7 +25,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
