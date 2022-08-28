@@ -11,11 +11,43 @@ services:
 #    image: 
     restart: always
     ports:
-      - '8888:80'
+      - '8080:80'
+      - '8443:443'
     networks:
       - bbva-network
+        
+  # Contenedor del PostgreSQL
+#  postgresql-db:
+#    container_name: postgresql_container
+#    image: postgres:13
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+#      - POSTGRES_DB=sea_db
+#    ports:
+#      - '5432:5432'
+#    volumes:
+#      - db:/var/lib/postgresql/data
+#    networks:
+#      - pos
+
+  # Contenedor del cliente web para PostgreSQL (PgAdmin)
+#  pgadmin:
+#    container_name: pgadmin_container
+#    image: dpage/pgadmin4
+#    restart: always
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+#      PGADMIN_DEFAULT_PASSWORD: root
+#    ports:
+#      - '5050:80'
+#    depends_on:
+#      - postgresql-db
 
 # Redes para facilitar la comunicacion entre contenedores
 networks:
   bbva-network:
     driver: bridge
+#  db:
+#    driver: local
