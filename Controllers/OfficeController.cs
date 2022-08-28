@@ -23,7 +23,7 @@ namespace BBVA.Controllers
             return _context.Office.ToList();
         }
         [HttpGet]
-        [Route("lalo")]
+        [Route("Latlon")]
         public async Task<Office> GetByLatiAndLong([FromQuery] string latitude, [FromQuery] string longitude)
         {
             return await _officeRepo.SearchByLatitudeAndLongitude(longitude,latitude);
@@ -37,14 +37,6 @@ namespace BBVA.Controllers
             return Ok();
         }
 
-        [HttpPut] // by id
-        public IActionResult Update([FromBody] Office office)
-        {
-            _context.Office.Update(office);
-            _context.SaveChanges();
-            return Ok();
-        }
-
         [HttpDelete] // by id
         public IActionResult Delete(int id)
         {
@@ -53,5 +45,16 @@ namespace BBVA.Controllers
             _context.SaveChanges();
             return Ok();
         }
+        // Update attribute CantidadAfuera by Latitude and Longitude
+        [HttpPut]
+        public IActionResult Update([FromQuery] string latitude, [FromQuery] string longitude, [FromQuery] int cantidadAfuera)
+        {
+            var office = _officeRepo.SearchByLatitudeAndLongitude(longitude,latitude);
+            office.Result.CantidadAfuera = cantidadAfuera;
+            _context.Office.Update(office.Result);
+            _context.SaveChanges();
+            return Ok();
+        }
+        
     }
 }
