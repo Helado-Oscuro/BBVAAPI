@@ -6,11 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850e58ca-3586-45a1-b351-499f83d8c03a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/UserFromReniec.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BBVA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BBVA.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BBVA.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/BankContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Office.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Office.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Ticket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Ticket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/UserFromReniec.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/UserFromReniec.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +100,7 @@
       <updated>1661628452697</updated>
       <workItem from="1661628459672" duration="107000" />
       <workItem from="1661628574806" duration="1845000" />
+      <workItem from="1661653698809" duration="2336000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,21 @@
+version: '3.9'
+# Definicion de los servicios
+services:
+
+  # Contenedor 
+  bbva-service:
+    container_name: bbva-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: 
+    restart: always
+    ports:
+      - '8888:80'
+    networks:
+      - bbva-network
+
+# Redes para facilitar la comunicacion entre contenedores
+networks:
+  bbva-network:
+    driver: bridge

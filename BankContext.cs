@@ -1,7 +1,8 @@
-﻿using BBVA.src.user.domain;
+﻿using BBVA.Models;
+using BBVA.src.user.domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace BBVA.Models
+namespace BBVA
 {
     public class BankContext : DbContext
     {
