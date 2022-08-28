@@ -1,4 +1,6 @@
-﻿using BBVA.Models;
+﻿using BBVA.DTO;
+using BBVA.Models;
+using BBVA.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BBVA.Controllers
@@ -8,10 +10,12 @@ namespace BBVA.Controllers
     public class TicketController : ControllerBase
     {
         private BankContext _context;
+        private TicketRepository _ticketRepository;
 
         public TicketController(BankContext context)
         {
             _context = context;
+            _ticketRepository = new TicketRepository(_context);
         }
 
         [HttpGet]
@@ -21,10 +25,9 @@ namespace BBVA.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Ticket ticket)
+        public IActionResult Create([FromBody] TicketDTO ticketDTO)
         {
-            _context.Ticket.Add(ticket);
-            _context.SaveChanges();
+            _ticketRepository.Save(ticketDTO);
             return Ok();
         }
 
