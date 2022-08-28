@@ -12,7 +12,8 @@ namespace BBVA.Models
         public int? Capacity { get; set; }
         public int? VentanillasTotalQuantity { get; set; }
         public int? PlataformasTotalQuantity { get; set; }
-        public DateTime? CheckInTime { get; set; }
-        public DateTime? CheckOutTime { get; set; }
+        public string? CheckInTime { get; set; }
+        public string? CheckOutTime { get; set; }
+        public int? CantidadAfuera { get; set; }
     }
 }

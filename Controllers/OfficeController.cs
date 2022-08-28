@@ -1,4 +1,5 @@
 ﻿using BBVA.Models;
+using BBVA.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BBVA.Controllers
@@ -8,16 +9,24 @@ namespace BBVA.Controllers
     public class OfficeController : ControllerBase
     {
         private BankContext _context;
+        private OfficeRepository _officeRepo;
 
         public OfficeController(BankContext context)
         {
             _context = context;
+            _officeRepo = new OfficeRepository(_context);
         }
 
         [HttpGet]
         public IList<Office> GetAll()
         {
             return _context.Office.ToList();
+        }
+        [HttpGet]
+        [Route("lalo")]
+        public async Task<Office> GetByLatiAndLong([FromQuery] string latitude, [FromQuery] string longitude)
+        {
+            return await _officeRepo.SearchByLatitudeAndLongitude(longitude,latitude);
         }
 
         [HttpPost]
