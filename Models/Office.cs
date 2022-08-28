@@ -15,5 +15,6 @@ namespace BBVA.Models
         public string? CheckInTime { get; set; }
         public string? CheckOutTime { get; set; }
         public int? CantidadAfuera { get; set; }
+        public int? CantidadAdentro { get; set; }
     }
 }

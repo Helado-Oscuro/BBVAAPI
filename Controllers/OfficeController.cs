@@ -24,6 +24,12 @@ namespace BBVA.Controllers
             return _context.Office.ToList();
         }
         [HttpGet]
+        [Route("id")]
+        public Office GetById(int id)
+        {
+            return _officeRepo.GetById(id);
+        }
+        [HttpGet]
         [Route("state")]
         public async Task<StateDTO> GetState([FromQuery] string latitude, [FromQuery] string longitude)
         {

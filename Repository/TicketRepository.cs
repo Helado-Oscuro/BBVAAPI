@@ -32,7 +32,7 @@ namespace BBVA.Repository
         {
             return _context.Ticket.ToList();
         }
-        public  Ticket GetLast()
+        public Ticket GetLast()
         {
             return  _context.Ticket.OrderBy(t => t.Id).LastOrDefault();
         }

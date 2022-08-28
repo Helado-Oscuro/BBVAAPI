@@ -17,7 +17,7 @@ namespace BBVA.Repository
             return office;
         }
 
-        internal async Task<StateDTO> GetState(string latitude, string longitude)
+        public async Task<StateDTO> GetState(string latitude, string longitude)
         {
             var office = _context.Office.FirstOrDefault(o => o.Longitude == longitude && o.Latitude == latitude);
 
@@ -27,5 +27,10 @@ namespace BBVA.Repository
 
             return new StateDTO(cantidadAfuera, cantidadAdentro);
         }
+        public Office GetById(int OfficeId)
+        {
+            return _context.Office.SingleOrDefault(o => o.Id == OfficeId);
+        }
+
     }
 }
