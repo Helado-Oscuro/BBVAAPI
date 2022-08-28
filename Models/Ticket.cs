@@ -12,7 +12,11 @@ namespace BBVA.Models
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdatedTime { get; set; }
         public int? CanalAtencion { get; set; } // 0 = Plataforma, 1 = Ventanilla
-        public Office? Office { get; set; }
-        public User? User { get; set; }
+        public int OfficeId { get; set; }
+        [JsonIgnore]
+        public virtual Office? Office { get; set; }
+        public int? UserId { get; set; }
+        [JsonIgnore]
+        public virtual User? User { get; set; }
     }
 }
