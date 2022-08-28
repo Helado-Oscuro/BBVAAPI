@@ -38,7 +38,7 @@ namespace BBVA.Controllers
         {
             _ticketRepository.Save(ticketDTO);
             _officeService.AumentarCantidadAfuera(ticketDTO.OfficeId);
-            _officeService.DisminuirCantidadAdentro(ticketDTO.OfficeId);
+
 
             return Ok();
         }
@@ -48,6 +48,7 @@ namespace BBVA.Controllers
         {
             _context.Ticket.Update(ticket);
             _context.SaveChanges();
+            _officeService.DisminuirCantidadAdentro(ticket.OfficeId);
             return Ok();
         }
 
