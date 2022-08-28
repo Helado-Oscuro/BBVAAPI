@@ -28,5 +28,9 @@ namespace BBVA.Repository
 
             _context.SaveChanges();
         }
+        public List<Ticket> GetTickets()
+        {
+            return _context.Ticket.ToList();
+        }
     }
 }

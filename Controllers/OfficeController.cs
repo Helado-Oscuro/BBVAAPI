@@ -1,4 +1,5 @@
-﻿using BBVA.Models;
+﻿using BBVA.DTO;
+using BBVA.Models;
 using BBVA.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,12 @@ namespace BBVA.Controllers
         public IList<Office> GetAll()
         {
             return _context.Office.ToList();
+        }
+        [HttpGet]
+        [Route("state")]
+        public async Task<StateDTO> GetState([FromQuery] string latitude, [FromQuery] string longitude)
+        {
+            return await _officeRepo.GetState(latitude, longitude);
         }
         [HttpGet]
         [Route("Latlon")]

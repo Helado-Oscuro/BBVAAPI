@@ -1,4 +1,5 @@
-﻿using BBVA.Models;
+﻿using BBVA.DTO;
+using BBVA.Models;
 
 namespace BBVA.Repository
 {
@@ -14,6 +15,17 @@ namespace BBVA.Repository
         {
             var office = _context.Office.FirstOrDefault(o => o.Longitude == longitude && o.Latitude == latitude);
             return office;
+        }
+
+        internal async Task<StateDTO> GetState(string latitude, string longitude)
+        {
+            var office = _context.Office.FirstOrDefault(o => o.Longitude == longitude && o.Latitude == latitude);
+
+            int? cantidadAfuera = office.CantidadAfuera;
+
+            int? cantidadAdentro =  _context.Ticket.Where(t => t.Office == office && t.State == 1).ToList().Count;
+
+            return new StateDTO(cantidadAfuera, cantidadAdentro);
         }
     }
 }

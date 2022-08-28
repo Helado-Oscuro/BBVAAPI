@@ -21,7 +21,7 @@ namespace BBVA.Controllers
         [HttpGet]
         public IList<Ticket> GetAll()
         {
-            return _context.Ticket.ToList();
+            return _ticketRepository.GetTickets();
         }
 
         [HttpPost]
