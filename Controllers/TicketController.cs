@@ -23,6 +23,12 @@ namespace BBVA.Controllers
         {
             return _ticketRepository.GetTickets();
         }
+        [HttpGet]
+        [Route("last")]
+        public Ticket GetLast()
+        {
+            return  _ticketRepository.GetLast();
+        }
 
         [HttpPost]
         public IActionResult Create([FromBody] TicketDTO ticketDTO)
