@@ -11,6 +11,7 @@ namespace BBVA.Repository
         {
             _context = context;
         }
+
         public void Save(TicketDTO ticketDto)
         {
             var office = _context.Office.FirstOrDefault(x => x.Id == ticketDto.OfficeId);
@@ -28,13 +29,17 @@ namespace BBVA.Repository
 
             _context.SaveChanges();
         }
+
         public List<Ticket> GetTickets()
         {
             return _context.Ticket.ToList();
         }
+
         public Ticket GetLast()
         {
-            return  _context.Ticket.OrderBy(t => t.Id).LastOrDefault();
+            // order by created time desc
+            // _context.Ticket
+            return _context.Ticket.OrderByDescending(x => x.CreatedTime).FirstOrDefault();
         }
     }
 }
